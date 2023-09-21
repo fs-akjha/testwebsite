@@ -24,9 +24,11 @@
     </style>
 </head>
 <body>
-    <a href='#main' style='position: absolute; left: 10px; top: 10px; width: auto; height: auto; overflow: visible; color: blue; text-decoration: underline; display: none;' tabindex="1" onfocus="this.style.display='block';" onblur="this.style.display='none';">
-    Skip to Main Content
-</a>
+   <a href='#main' style='position: absolute; left: 10px; top: 10px; width: auto; height: auto; 
+                  overflow: visible; color: blue; text-decoration: underline; opacity: 0; visibility: hidden;' tabindex="1" 
+                  onfocus="this.style.opacity=1; this.style.visibility='visible';" onblur="this.style.opacity=0; this.style.visibility='hidden';">
+                    Skip to Main Content
+   </a>
     <nav>
         <a href="1">Home</a>
         <a href="2">About</a>
