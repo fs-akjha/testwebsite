@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Header Section</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Main Content</h2>
+        <p>This is the main content of the page.</p>
+    </main>
+    
+    <footer>
+        <p>Footer Section</p>
+        <nav>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
