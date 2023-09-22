@@ -24,25 +24,7 @@
     </style>
 </head>
 <body>
-    <a href='#main' id='skip-link' style='position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;'>
-    Skip to Main Content
-</a>
-<script>
-    document.getElementById('skip-link').addEventListener('focus', function () {
-        this.style.left = 'auto';
-        this.style.width = 'auto';
-        this.style.height = 'auto';
-        this.style.overflow = 'visible';
-    });
-    document.getElementById('skip-link').addEventListener('blur', function () {
-        this.style.position = 'absolute';
-        this.style.left = '-9999px';
-        this.style.width = '1px';
-        this.style.height = '1px';
-        this.style.overflow = 'hidden';
-    });
-</script>
-    <nav id="main">
+    <nav>
         <a href="1">Home</a>
         <a href="2">About</a>
         <a href="3">Services</a>
