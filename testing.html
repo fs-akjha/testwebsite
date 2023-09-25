@@ -30,6 +30,7 @@
     <script>
         var skipLink = document.getElementById('skip-link');
         var mainContent = document.getElementById('main');
+
         var tabPressed = false;
 
         document.addEventListener('keydown', function (event) {
@@ -40,12 +41,6 @@
                     skipLink.style.height = 'auto';
                     skipLink.style.overflow = 'visible';
                     tabPressed = true;
-                } else {
-                    skipLink.style.position = 'absolute';
-                    skipLink.style.left = '-9999px';
-                    skipLink.style.width = '1px';
-                    skipLink.style.height = '1px';
-                    skipLink.style.overflow = 'hidden';
                 }
             }
         });
