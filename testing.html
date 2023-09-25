@@ -24,14 +24,14 @@
     </style>
 </head>
 <body>
-       <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height = 1px; overflow: hidden;">Skip to Main Content</a>
+       <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
         <!-- JavaScript to handle the skip link -->
         <script>
             var skipLink = document.getElementById('skip-link');
             var tabPressed = false;
         
-            // Determine if the current element is the second-last element on the page
-            function isSecondLastElement(element) {
+            // Determine if the current element is the last element on the page
+            function isLastElement(element) {
                 var allElements = document.getElementsByTagName("*");
                 return element === allElements[allElements.length - 2];
             }
@@ -44,14 +44,11 @@
                         skipLink.style.height = 'auto';
                         skipLink.style.overflow = 'visible';
                         tabPressed = true;
-                    } else if (isSecondLastElement(document.activeElement)) {
-                        // Reset tabPressed when the second-last element is reached
-                        tabPressed = false;
-                    } else if (document.activeElement === document.body) {
-                        // Reset tabPressed when browser tabs are reached
-                        tabPressed = false;
-                    } else if (isLastElement(document.activeElement)) {
-                        // Hide the skip link when the last element is reached
+                    } else {
+                        if (isLastElement(document.activeElement)) {
+                            // Reset tabPressed when the last element is reached
+                            tabPressed = false;
+                        }
                         skipLink.style.position = 'absolute';
                         skipLink.style.left = '-9999px';
                         skipLink.style.width = '1px';
