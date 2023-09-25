@@ -25,8 +25,9 @@
 </head>
 <body>
    <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
-    <!-- JavaScript to handle the skip link -->
-    <script>
+
+<!-- JavaScript to handle the skip link -->
+<script>
     var skipLink = document.getElementById('skip-link');
     var tabPressed = false;
 
@@ -50,7 +51,7 @@
 
     // Handle focus on other elements
     document.addEventListener('focus', function (event) {
-        if (event.target.tagName === 'A' && event.target !== skipLink) {
+        if (event.target !== skipLink) {
             tabPressed = false; // Reset tabPressed when focus moves to other anchor tags
         }
     });
