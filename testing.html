@@ -26,15 +26,11 @@
 <body>
    <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" tabindex="0">Skip to Main Content</a>
 
-    <!-- Your main content goes here -->
-    <div id="main" tabindex="0">Main Content</div>
-
     <!-- JavaScript to handle the skip link -->
     <script>
         var skipLink = document.getElementById('skip-link');
-        var mainContent = document.getElementById('main');
         var tabPressed = false;
-
+    
         document.addEventListener('keydown', function (event) {
             if (event.keyCode === 9) { // Tab key
                 if (!tabPressed) {
@@ -45,24 +41,21 @@
                     skipLink.style.overflow = 'visible';
                     tabPressed = true;
                 } else {
-                    // Hide Skip to Main Content
-                    skipLink.style.position = 'absolute';
-                    skipLink.style.left = '-9999px';
-                    skipLink.style.width = '1px';
-                    skipLink.style.height = '1px';
-                    skipLink.style.overflow = 'hidden';
+                    if (skipLink.getAttribute('tabindex') === '0') {
+                        // Show Skip to Main Content
+                        skipLink.style.position = 'static';
+                        skipLink.style.width = 'auto';
+                        skipLink.style.height = 'auto';
+                        skipLink.style.overflow = 'visible';
+                    } else {
+                        // Hide Skip to Main Content
+                        skipLink.style.position = 'absolute';
+                        skipLink.style.left = '-9999px';
+                        skipLink.style.width = '1px';
+                        skipLink.style.height = '1px';
+                        skipLink.style.overflow = 'hidden';
+                    }
                 }
-            }
-        });
-
-        mainContent.addEventListener('focus', function () {
-            if (tabPressed) {
-                // Hide Skip to Main Content when focus moves to main content
-                skipLink.style.position = 'absolute';
-                skipLink.style.left = '-9999px';
-                skipLink.style.width = '1px';
-                skipLink.style.height = '1px';
-                skipLink.style.overflow = 'hidden';
             }
         });
     </script>
