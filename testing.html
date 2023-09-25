@@ -31,21 +31,20 @@
     </style>
 </head>
 <body>
-            <script>
+    <a href="#main" id="skip-link">Skip to Main Content</a>
+         <script>
         var skipLink = document.getElementById('skip-link');
         var mainContent = document.getElementById('main');
-        var tabPressed = false;
-
-        document.addEventListener('keydown', function (event) {
-            if (event.keyCode === 9 && !tabPressed) { // Tab key (keyCode 9) and not pressed before
+        
+        skipLink.addEventListener('keydown', function (event) {
+            if (event.keyCode === 9) { // Tab key (keyCode 9)
                 skipLink.style.position = 'static';
                 skipLink.style.width = 'auto';
                 skipLink.style.height = 'auto';
                 skipLink.style.overflow = 'visible';
-                tabPressed = true;
             }
         });
-
+        
         mainContent.addEventListener('keydown', function (event) {
             if (event.keyCode === 9) { // Tab key (keyCode 9)
                 skipLink.style.position = 'absolute';
