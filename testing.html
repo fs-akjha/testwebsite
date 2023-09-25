@@ -31,8 +31,10 @@
     </style>
 </head>
 <body>
-    <a href="#main" id="skip-link">Skip to Main Content</a>
-         <script>
+   <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
+    
+    <!-- JavaScript to handle the skip link -->
+    <script>
         var skipLink = document.getElementById('skip-link');
         var mainContent = document.getElementById('main');
         
@@ -56,8 +58,6 @@
         });
     </script>
     
-    <!-- Skip link -->
-    <a href="#main" id="skip-link">Skip to Main Content</a>
     <nav>
         <a href="1">Home</a>
         <a href="2">About</a>
