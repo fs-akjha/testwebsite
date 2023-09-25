@@ -21,13 +21,6 @@
         nav a:hover {
             background-color: #555;
         }
-        #skip-link {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
     </style>
 </head>
 <body>
@@ -37,18 +30,20 @@
     <script>
         var skipLink = document.getElementById('skip-link');
         var mainContent = document.getElementById('main');
-        
-        skipLink.addEventListener('keydown', function (event) {
-            if (event.keyCode === 9) { // Tab key (keyCode 9)
+        var tabPressed = false;
+
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode === 9 && !tabPressed) {
                 skipLink.style.position = 'static';
                 skipLink.style.width = 'auto';
                 skipLink.style.height = 'auto';
                 skipLink.style.overflow = 'visible';
+                tabPressed = true;
             }
         });
-        
-        mainContent.addEventListener('keydown', function (event) {
-            if (event.keyCode === 9) { // Tab key (keyCode 9)
+
+        mainContent.addEventListener('focus', function () {
+            if (tabPressed) {
                 skipLink.style.position = 'absolute';
                 skipLink.style.left = '-9999px';
                 skipLink.style.width = '1px';
