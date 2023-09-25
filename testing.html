@@ -46,19 +46,10 @@
                     skipLink.style.width = '1px';
                     skipLink.style.height = '1px';
                     skipLink.style.overflow = 'hidden';
+                    tabPressed = false;
                 }
             }
-        });
-
-        mainContent.addEventListener('focus', function () {
-            if (tabPressed) {
-                skipLink.style.position = 'absolute';
-                skipLink.style.left = '-9999px';
-                skipLink.style.width = '1px';
-                skipLink.style.height = '1px';
-                skipLink.style.overflow = 'hidden';
-            }
-        });
+        })
     </script>
     
     <nav>
