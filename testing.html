@@ -40,15 +40,12 @@
                     skipLink.style.height = 'auto';
                     skipLink.style.overflow = 'visible';
                     tabPressed = true;
-                } else if (document.activeElement !== skipLink) {
-                    // Hide Skip to Main Content if focus is not on the link
-                    skipLink.style.position = 'absolute';
-                    skipLink.style.left = '-9999px';
-                    skipLink.style.width = '1px';
-                    skipLink.style.height = '1px';
-                    skipLink.style.overflow = 'hidden';
                 }
             }
+        });
+    
+        skipLink.addEventListener('blur', function () {
+            tabPressed = false; // Reset tabPressed when focus leaves the link
         });
     </script>
     
