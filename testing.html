@@ -40,14 +40,8 @@
                     skipLink.style.height = 'auto';
                     skipLink.style.overflow = 'visible';
                     tabPressed = true;
-                } else {
-                    if (skipLink.getAttribute('tabindex') === '0') {
-                        // Show Skip to Main Content
-                        skipLink.style.position = 'static';
-                        skipLink.style.width = 'auto';
-                        skipLink.style.height = 'auto';
-                        skipLink.style.overflow = 'visible';
-                    } else {
+                } 
+                else {
                         // Hide Skip to Main Content
                         skipLink.style.position = 'absolute';
                         skipLink.style.left = '-9999px';
@@ -55,6 +49,12 @@
                         skipLink.style.height = '1px';
                         skipLink.style.overflow = 'hidden';
                     }
+                if (skipLink.getAttribute('tabindex') === '0') {
+                    // Show Skip to Main Content
+                    skipLink.style.position = 'static';
+                    skipLink.style.width = 'auto';
+                    skipLink.style.height = 'auto';
+                    skipLink.style.overflow = 'visible';
                 }
             }
         });
