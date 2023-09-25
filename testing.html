@@ -25,7 +25,6 @@
 </head>
 <body>
        <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height = 1px; overflow: hidden;">Skip to Main Content</a>
-
         <!-- JavaScript to handle the skip link -->
         <script>
             var skipLink = document.getElementById('skip-link');
@@ -45,6 +44,9 @@
                         skipLink.style.height = 'auto';
                         skipLink.style.overflow = 'visible';
                         tabPressed = true;
+                    } else if (isSecondLastElement(document.activeElement)) {
+                        // Reset tabPressed when the second-last element is reached
+                        tabPressed = false;
                     } else if (document.activeElement === document.body) {
                         // Reset tabPressed when browser tabs are reached
                         tabPressed = false;
