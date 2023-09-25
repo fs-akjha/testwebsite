@@ -24,37 +24,28 @@
     </style>
 </head>
 <body>
-   <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" tabindex="0">Skip to Main Content</a>
+   <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
 
+    <!-- Your main content goes here -->
     <!-- JavaScript to handle the skip link -->
     <script>
         var skipLink = document.getElementById('skip-link');
         var tabPressed = false;
-    
+
         document.addEventListener('keydown', function (event) {
-            if (event.keyCode === 9) { // Tab key
+            if (event.keyCode === 9) {
                 if (!tabPressed) {
-                    // Show Skip to Main Content
                     skipLink.style.position = 'static';
                     skipLink.style.width = 'auto';
                     skipLink.style.height = 'auto';
                     skipLink.style.overflow = 'visible';
                     tabPressed = true;
-                } 
-                else {
-                        // Hide Skip to Main Content
-                        skipLink.style.position = 'absolute';
-                        skipLink.style.left = '-9999px';
-                        skipLink.style.width = '1px';
-                        skipLink.style.height = '1px';
-                        skipLink.style.overflow = 'hidden';
-                    }
-                if (skipLink.getAttribute('tabindex') === '0') {
-                    // Show Skip to Main Content
-                    skipLink.style.position = 'static';
-                    skipLink.style.width = 'auto';
-                    skipLink.style.height = 'auto';
-                    skipLink.style.overflow = 'visible';
+                } else {
+                    skipLink.style.position = 'absolute';
+                    skipLink.style.left = '-9999px';
+                    skipLink.style.width = '1px';
+                    skipLink.style.height = '1px';
+                    skipLink.style.overflow = 'hidden';
                 }
             }
         });
