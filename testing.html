@@ -25,33 +25,38 @@
 </head>
 <body>
    <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
-
-    <!-- Your main content goes here -->
     <!-- JavaScript to handle the skip link -->
     <script>
-        var skipLink = document.getElementById('skip-link');
-        var tabPressed = false;
+    var skipLink = document.getElementById('skip-link');
+    var tabPressed = false;
 
-        document.addEventListener('keydown', function (event) {
-            if (event.keyCode === 9) {
-                if (!tabPressed) {
-                    skipLink.style.position = 'static';
-                    skipLink.style.width = 'auto';
-                    skipLink.style.height = 'auto';
-                    skipLink.style.overflow = 'visible';
-                    tabPressed = true;
-                } else {
-                    skipLink.style.position = 'absolute';
-                    skipLink.style.left = '-9999px';
-                    skipLink.style.width = '1px';
-                    skipLink.style.height = '1px';
-                    skipLink.style.overflow = 'hidden';
-                }
+    document.addEventListener('keydown', function (event) {
+        if (event.keyCode === 9) {
+            if (!tabPressed) {
+                skipLink.style.position = 'static';
+                skipLink.style.width = 'auto';
+                skipLink.style.height = 'auto';
+                skipLink.style.overflow = 'visible';
+                tabPressed = true;
+            } else {
+                skipLink.style.position = 'absolute';
+                skipLink.style.left = '-9999px';
+                skipLink.style.width = '1px';
+                skipLink.style.height = '1px';
+                skipLink.style.overflow = 'hidden';
             }
-        });
-    </script>
+        }
+    });
+
+    // Handle focus on other elements
+    document.addEventListener('focus', function (event) {
+        if (event.target.tagName === 'A' && event.target !== skipLink) {
+            tabPressed = false; // Reset tabPressed when focus moves to other anchor tags
+        }
+    });
+</script>
     
-    <nav>
+    <nav id=main>
         <a href="1">Home</a>
         <a href="2">About</a>
         <a href="3">Services</a>
