@@ -24,6 +24,32 @@
     </style>
 </head>
 <body>
+    <a href='#main' id='skip-link' style='position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;'>
+                    Skip to Main Content
+                </a>
+                <script>
+                var skipLink = document.getElementById('skip-link');
+                var mainContent = document.getElementById('main');
+                
+                skipLink.addEventListener('keydown', function (event) {
+                    if (event.keyCode === 9) { // Tab key (keyCode 9)
+                        skipLink.style.position = 'static';
+                        skipLink.style.width = 'auto';
+                        skipLink.style.height = 'auto';
+                        skipLink.style.overflow = 'visible';
+                    }
+                });
+                
+                mainContent.addEventListener('keydown', function (event) {
+                    if (event.keyCode === 9) { // Tab key (keyCode 9)
+                        skipLink.style.position = 'absolute';
+                        skipLink.style.left = '-9999px';
+                        skipLink.style.width = '1px';
+                        skipLink.style.height = '1px';
+                        skipLink.style.overflow = 'hidden';
+                    }
+                });
+            </script>
     <nav>
         <a href="1">Home</a>
         <a href="2">About</a>
