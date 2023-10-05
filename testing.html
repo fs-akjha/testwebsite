@@ -24,42 +24,8 @@
     </style>
 </head>
 <body>
-       <a href="#main" id="skip-link" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
-        <!-- JavaScript to handle the skip link -->
-        <script>
-            var skipLink = document.getElementById('skip-link');
-            var tabPressed = false;
-        
-            // Determine if the current element is the last element on the page
-            function isLastElement(element) {
-                var allElements = document.getElementsByTagName("*");
-                return element === allElements[allElements.length - 2];
-            }
-        
-            document.addEventListener('keydown', function (event) {
-                if (event.keyCode === 9) {
-                    if (!tabPressed) {
-                        skipLink.style.position = 'static';
-                        skipLink.style.width = 'auto';
-                        skipLink.style.height = 'auto';
-                        skipLink.style.overflow = 'visible';
-                        tabPressed = true;
-                    } else {
-                        if (isLastElement(document.activeElement)) {
-                            // Reset tabPressed when the last element is reached
-                            tabPressed = false;
-                        }
-                        skipLink.style.position = 'absolute';
-                        skipLink.style.left = '-9999px';
-                        skipLink.style.width = '1px';
-                        skipLink.style.height = '1px';
-                        skipLink.style.overflow = 'hidden';
-                    }
-                }
-            });
-        </script>
     
-    <nav id=main>
+    <nav>
         <a href="1">Home</a>
         <a href="2">About</a>
         <a href="3">Services</a>
