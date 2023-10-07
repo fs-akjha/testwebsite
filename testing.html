@@ -24,11 +24,41 @@
     </style>
 </head>
 <body>
-    <a href="#main-content" id="hidden-anchor" class="d-none">
-   Go to main content
-  </a>
-    <a href="#main-content" id="hidden-a" class="d-none">
-Need Help
+    <a href="#skiptomaincontent" class="skiptomaincontent" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
+    <!-- JavaScript to handle the skip link -->
+    <script>
+        var skipLink = document.querySelector('.skiptomaincontent');
+        var tabPressed = false;
+    
+        // Determine if the current element is the last element on the page
+        function isLastElement(element) {
+            var allElements = document.getElementsByTagName("*");
+            return element === allElements[allElements.length - 2];
+        }
+    
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode === 9) {
+                if (!tabPressed) {
+                    skipLink.style.position = 'static';
+                    skipLink.style.width = 'auto';
+                    skipLink.style.height = 'auto';
+                    skipLink.style.overflow = 'visible';
+                    tabPressed = true;
+                } else {
+                    if (isLastElement(document.activeElement)) {
+                        // Reset tabPressed when the last element is reached
+                        tabPressed = false;
+                    }
+                    skipLink.style.position = 'absolute';
+                    skipLink.style.left = '-9999px';
+                    skipLink.style.width = '1px';
+                    skipLink.style.height = '1px';
+                    skipLink.style.overflow = 'hidden';
+                }
+            }
+        });
+    </script>
+    <div id="skiptomaincontent"></div>
    </a>
     <nav>
         <a href="1">Home</a>
