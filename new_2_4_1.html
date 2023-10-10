@@ -1,40 +1,7 @@
 
 <!DOCTYPE html><html><head><script data-wally="vbxfd2Fyb/yJ9LgNXnHiAA==" src="https://s3.us-east-2.amazonaws.com/cdn.wallyax.com/wally-stg-0.0.1.js"></script><link rel="stylesheet" type="text/css" href="/styles.css"></head>
   <body>
-    <a href="#skiptomaincontent" class="skiptomaincontent" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Skip to Main Content</a>
-                <!-- JavaScript to handle the skip link -->
-                <script>
-                    var skipLink = document.querySelector('.skiptomaincontent');
-                    var tabPressed = false;
-                
-                    // Determine if the current element is the last element on the page
-                    function isLastElement(element) {
-                        var allElements = document.getElementsByTagName("*");
-                        return element === allElements[allElements.length - 2];
-                    }
-                
-                    document.addEventListener('keydown', function (event) {
-                        if (event.keyCode === 9) {
-                            if (!tabPressed) {
-                                skipLink.style.position = 'static';
-                                skipLink.style.width = 'auto';
-                                skipLink.style.height = 'auto';
-                                skipLink.style.overflow = 'visible';
-                                tabPressed = true;
-                            } else {
-                                if (isLastElement(document.activeElement)) {
-                                    // Reset tabPressed when the last element is reached
-                                    tabPressed = false;
-                                }
-                                skipLink.style.position = 'absolute';
-                                skipLink.style.left = '-9999px';
-                                skipLink.style.width = '1px';
-                                skipLink.style.height = '1px';
-                                skipLink.style.overflow = 'hidden';
-                            }
-                        }
-                    });
-                </script>
+  <a href="#skiptomaincontent" class="skiptomaincontent" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; transition: all 0.3s ease-in-out;" tabindex="1">Skip to Main Content</a>
   <div id="skiptomaincontent"></div>
   <ul><li><a href="/TestPage7_241_BypassBlocks1">Test Page 2.4.1 - Bypass Blocks - iFrames</a></li><li><a href="/SkipLinks/TestPage8a_241_BB-NoSuchID">TestPage 2.4.1 - NoSuchID</a></li><!-- <li> <a href="/SkipLinks/TestPage8a_241_BB-NoSuchID">TestPage 2.4.1 - NoSuchID</a></li>
   <li> <a href="/SkipLinks/TestPage8a_241_BB-NoSuchID">TestPage 2.4.1 - NoSuchID</a></li>
