@@ -16,7 +16,6 @@
         var body = document.body;
         var anchor = document.querySelector('.skiptomaincontent');
 
-        // Check if the anchor tag is not already the first node after body
         if (body.firstElementChild !== anchor) {
             body.insertBefore(anchor, body.firstElementChild);
         }
